@@ -28,19 +28,32 @@
         color: crimson;
         font-size: 30px;
         text-align: left;
+        vertical-align: middle;
+      }
+
+      ul li button {
+        cursor: pointer;
+        background-color: crimson;
+        color: white;
+        padding-inline: 20px;
+        padding-block: 10px;
+        border: none;
+        border-radius: 50px;
+        margin-inline-start: 20px;
+        vertical-align: middle;
       }
     </style>
   </head>
   <body>
     <form>
       <label for="petName">Pet Name</label>
-      <input type="text" id="petName" class="petName" />
+      <input type="text" id="petName" class="petName" required />
       <label for="ownerName">Owner Name</label>
-      <input type="text" id="ownerName" class="ownerName" />
+      <input type="text" id="ownerName" class="ownerName" required />
       <label for="species">Species</label>
-      <input type="text" id="species" class="species" />
+      <input type="text" id="species" class="species" required />
       <label for="breed">Breed</label>
-      <input type="text" id="breed" class="breed" />
+      <input type="text" id="breed" class="breed" required />
       <button type="submit">Invia Dati Pet</button>
     </form>
 

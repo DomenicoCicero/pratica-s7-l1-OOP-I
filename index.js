@@ -45,12 +45,30 @@ const razza = document.querySelector("#breed");
 const form = document.querySelector("form");
 const ul = document.querySelector("ul");
 
+const arrObj = [];
+
 form.addEventListener("submit", e => {
   e.preventDefault();
   const pet = new Pet(petN.value, ownerN.value, specie.value, razza.value);
+  arrObj.push(pet);
   console.log(pet);
+  console.log(arrObj);
   const li = document.createElement("li");
   li.innerText = `name: ${pet.petName}, owner: ${pet.ownerName}, species: ${pet.species}, breed: ${pet.breed}`;
+  const button = document.createElement("button");
+  button.type = "button";
+  button.innerText = "Elimina";
+  li.appendChild(button);
   ul.appendChild(li);
   form.reset();
+
+  button.addEventListener("click", e => {
+    e.target.parentNode.remove();
+    for (let i = 0; i < arrObj.length; i++) {
+      if (e.target.parentNode.innerText.startsWith(`name: ${arrObj[i].petName}`)) {
+        arrObj.splice(i, 1);
+        console.log(arrObj);
+      }
+    }
+  });
 });
